@@ -29,3 +29,7 @@ class WeatherApp:
         for forecast in forecast_data:
             date_str = forecast["dt_txt"]
             date = datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+            if date.hour == 12:
+                temperature = round(forecast["main"]["temp"] - 273.15, 2)
+                weather_description = forecast["weather"][0]["description"].capitalize()
+                weather_icon = forecast["weather"][0]["icon"]
