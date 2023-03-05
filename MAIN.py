@@ -40,3 +40,7 @@ class WeatherApp:
                     "weather_description": weather_description,
                     "weather_icon": weather_icon
                 })
+    def get_weather_data(self, city_name):
+        self.city_name = city_name
+        self.get_current_weather_data()
+        self.get_forecast_data()            
