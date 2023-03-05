@@ -33,3 +33,10 @@ class WeatherApp:
                 temperature = round(forecast["main"]["temp"] - 273.15, 2)
                 weather_description = forecast["weather"][0]["description"].capitalize()
                 weather_icon = forecast["weather"][0]["icon"]
+                self.forecast_data.append({
+                    "date": date.strftime("%Y-%m-%d"),
+                    "time": date.strftime("%H:%M"),
+                    "temperature": temperature,
+                    "weather_description": weather_description,
+                    "weather_icon": weather_icon
+                })
